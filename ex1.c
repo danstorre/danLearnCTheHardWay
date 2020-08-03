@@ -7,6 +7,6 @@ int main(int argc, char *argv[])
 
     // this is also a comment
     printf("You are %d miles away.\n", distance);
-    
+
     return 0;
 }
