@@ -1,24 +1,27 @@
 #include <stdio.h>
 #include <ctype.h>
+#include <string.h>
 
 // forward declarations
 int can_print_it(char ch);
-void print_letters(char arg[]);
+void print_letters(char arg[], int argc);
 
 void print_arguments(int argc, char *argv[])
 {
     int i = 0;
 
     for (i = 0; i < argc; i++) {
-        print_letters(argv[i]);
+    	int numberofcharsin = strlen(argv[i]);
+    	printf("length of the string at %i: %i. \n", i, numberofcharsin);
+        print_letters(argv[i], numberofcharsin);
     }
 }
 
-void print_letters(char arg[]) 
+void print_letters(char arg[], int argc) 
 {
     int i = 0;
 	
-    for (i = 0; arg[i] != '\0'; i++) {
+    for (i = 0; i < argc; i++) {
         char ch = arg[i];
 		
         if (can_print_it(ch)) {
@@ -39,8 +42,4 @@ int main(int argc, char* argv[])
 	print_arguments(argc, argv);
 	return 0;
 }
-
-
-
-
 
